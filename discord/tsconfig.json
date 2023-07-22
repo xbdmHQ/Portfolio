@@ -1,0 +1,25 @@
+{
+	"compilerOptions": {
+		"lib": ["ESNext", "DOM"],
+
+		"target": "ESNext",
+		"module": "ESNext",
+
+		"strict": true,
+		"noImplicitAny": true,
+		"strictNullChecks": true,
+		"strictFunctionTypes": true,
+		"strictPropertyInitialization": true,
+		"noImplicitThis": true,
+		"alwaysStrict": true,
+
+		"forceConsistentCasingInFileNames": true,
+
+		"skipLibCheck": true,
+
+		"rootDir": "./ts",
+		"outDir": "./js"
+	},
+
+	"include": ["./ts"]
+}
