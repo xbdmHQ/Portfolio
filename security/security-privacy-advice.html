@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+  <script src="/theme.js"></script>
+  <script type="module" src="/button.js"></script>
+  <title>Security and Privacy Advice | Madaidan's Insecurities</title>
+</head>
+
+<body>
+  <button class="theme-toggle">🌓</button>
+  <h1>Security and Privacy Advice</h1>
+
+  <p class="date"><em><time datetime="2022-04-02">Last edited: April 2nd, 2022</time></em></p>
+
+  <h2 id="desktop-hardware"><a href="#desktop-hardware">Desktop Hardware</a></h2>
+
+  <p>
+    On desktop, use a recent Windows Secured-Core PC, MacBook or Chromebook. These all have numerous security advantages, including
+    proper verified boot, a strict IOMMU, etc. <br>
+    <br>
+    Mobile phone hardware is covered in the <a href="#mobile-os">mobile operating system section</a>.
+  </p>
+
+  <h2 id="operating-system"><a href="#operating-system">Operating System</a></h2>
+
+  <h3 id="desktop-os"><a href="#desktop-os">Desktop</a></h3>
+
+  <p>
+    The desktop security model is very broken. <a
+    href="https://blog.cryptographyengineering.com/2017/03/05/secure-computing-for-journalists/">It was not designed with security
+    in mind</a> — security was only a poorly implemented afterthought. However, there are some operating systems that are less bad
+    in this regard. If you can, stay away from desktop and <a href="#mobile-os">stick to mobile devices</a>. <br>
+    <br>
+    Use Windows 11 (preferably in <a href="https://www.microsoft.com/en-us/windows/s-mode">S mode</a> and on a Secured-Core PC),
+    macOS, ChromeOS or <a href="https://www.qubes-os.org/">QubesOS</a>. Generally, these operating systems have made substantial
+    progress on adopting modern exploit mitigations, verified boot, sandboxing, memory safe languages and so on. <br>
+    <br>
+    There are advantages and disadvantages between these options, and it is not possible to give an accurate recommendation as to which of
+    these will suit any particular person. One must develop their own threat model and choose the suitable operating system in accordance.
+    For example, Windows 10 has great exploit mitigations, such as its coarse-grained, forward-edge CFI implementation, <a
+    href="https://docs.microsoft.com/en-us/windows/win32/secbp/control-flow-guard">Control Flow Guard</a>, whereas macOS has <a
+    href="https://support.apple.com/en-us/HT208330">full verified boot</a> to eliminate malware persistence. <br>
+    <br>
+    Some of these operating systems do have some privacy invasive telemetry, but it can usually be disabled in the settings and
+    verified with a network analyser tool like Wireshark if you wish to be certain. <br>
+    <br>
+    The security of QubesOS depends entirely on how you use it. The security within the virtual machines matter a lot — don't
+    neglect it. Make sure that you use secure guest operating systems and split everything between as many virtual machines as
+    possible. Virtualisation can be a very strong security boundary, but it is not magic. I'd recommend reading <a
+    href="https://seclists.org/dailydave/2010/q3/29">Brad Spengler's criticisms of QubesOS</a> to understand some of its limitations. <br>
+    <br>
+    <a href="linux.html">Do not use Linux</a> (QubesOS <a
+    href="https://www.qubes-os.org/faq/#is-qubes-just-another-linux-distribution">is not a Linux distribution</a>).
+  </p>
+
+  <h3 id="mobile-os"><a href="#mobile-os">Mobile</a></h3>
+
+  <p>
+    Mobile operating systems were designed with security as a foundational component. They were built with sandboxing, verified boot,
+    modern exploit mitigations and more from the start. As such, they are far more locked down than other platforms and significantly
+    more resistant to attacks. <br>
+    <br>
+    Use either the stock operating system or preferably, <a href="https://grapheneos.org/">GrapheneOS</a> on a Pixel ≥4. Do not
+    root your device, do not keep your bootloader unlocked and stay away from alternative operating systems like LineageOS, as
+    they substantially worsen the security model. Read the <a href="android.html">Android article</a> for more details. <br>
+    <br>
+    Alternatively, use an up-to-date iPhone, which is comparable to GrapheneOS on a Pixel, and do not jailbreak your device. <br>
+    <br>
+    <a href="linux-phones.html">Stay away from Linux phones</a>.
+  </p>
+
+  <h2 id="browser"><a href="#browser">Browser</a></h2>
+
+  <p>
+    For security, use Chromium. Avoid Firefox or browsers based on it, as they are currently <a href="firefox-chromium.html">very
+    lacking in security</a>. Microsoft Edge is a better choice for Windows users, as it can utilise <a
+    href="https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-application-guard/md-app-guard-overview">
+    Microsoft Defender Application Guard</a> (MDAG) and has an
+    <a href="https://microsoftedge.github.io/edgevr/posts/Introducing-Enhanced-Security-for-Microsoft-Edge/">enhanced security mode</a>
+    in which JIT is disabled and mitigations such as ACG, CIG, CFG and CET are all enabled in the renderer process. <br>
+    <br>
+    For privacy, use the Tor Browser, and consider using the security slider. Do not assume that "hardening" Firefox or
+    other browsers will make it private; <a href="browser-tracking.html">it won't</a>.
+    Be aware that this has massively reduced security from other options, as mentioned above. <br>
+    <br>
+    For a mixture of security and privacy, use <a href="https://github.com/GrapheneOS/Vanadium">Vanadium</a>,
+    <a href="https://www.bromite.org/">Bromite</a> or <a href="https://brave.com/">Brave</a>, although none of these are
+    as good as the Tor Browser when it comes to privacy.
+  </p>
+
+  <h2 id="messenger"><a href="#messenger">Messenger</a></h2>
+
+  <p>
+    <a href="messengers.html">Use Signal</a>, preferably with a burner or VoIP number.
+  </p>
+
+  <h2 id="email"><a href="#email">Email</a></h2>
+
+  <p>
+    If you can, <a href="https://latacora.singles/2020/02/19/stop-using-encrypted.html">stay away from email</a>, as it is a fundamentally
+    insecure protocol, but if you must use it, use a reputable email provider with a strong focus on security, such as
+    <a href="https://protonmail.com/">ProtonMail</a> or <a href="https://tutanota.com/">Tutanota</a>. <br>
+    <br>
+    Consider staying away from web apps, as <a href="https://protonmail.com/blog/cryptographic-architecture-response/">they can
+    provide weaker security</a>. When a user visits a website in a browser, that website can target that specific user with
+    malicious JavaScript, whereas with a native app, the code is static. Additionally, apps can offer better protection against MITM
+    attacks by pinning TLS certificates and removing the dependency on certificate authorities. This is commonly used in apps like <a
+    href="https://protonmail.com/blog/tls-ssl-certificate/#Extra-security-precautions-taken-by-ProtonMail">ProtonMail</a>, <a
+    href="https://www.signal.org/blog/certifiably-fine/">Signal</a> and so on. However, websites in a browser are much less privileged,
+    as they do not have direct access to system resources. Thus, using a web app could be more secure under certain threat models.
+  </p>
+
+  <h2 id="passwords-2fa"><a href="#passwords-2fa">Passwords/2FA</a></h2>
+
+  <p>
+    Store passwords in a good password manager — <a href="https://keepass.info/">KeePass</a> or <a href="https://bitwarden.com/">
+    Bitwarden</a> is recommended. Generate 20+ character passwords containing a completely random assortment of upper and
+    lowercase letters, numbers and symbols. Use a different password on each website, and enable two-factor authentication
+    (2FA) for every website. Do not use SMS for 2FA, as it is vulnerable to simjacking and man-in-the-middle attacks.
+    Use an authenticator app like <a href="https://getaegis.app/">Aegis</a>.
+  </p>
+
+  <h2 id="social-media"><a href="#social-media">Social Media</a></h2>
+
+  <p>
+    Don't.
+  </p>
+
+  <h2 id="general"><a href="#general">General</a></h2>
+
+  <ul>
+    <li class="lilist">
+      Do not put any sensitive information online if you can help it. If you must, use strong encryption.
+    </li>
+
+    <li class="lilist">
+      Always use full-disk encryption. Use
+      <a href="https://docs.microsoft.com/en-us/windows/security/information-protection/bitlocker/bitlocker-overview">
+      Bitlocker</a> on Windows, <a href="https://support.apple.com/guide/deployment/intro-to-filevault-dep82064ec40/web">
+      FileVault</a> on macOS and <a href="https://wiki.archlinux.org/title/Dm-crypt">dm-crypt</a> on Linux.
+    </li>
+
+    <li class="lilist">
+      Do not plug your devices into unknown ports.
+    </li>
+
+    <li class="lilist">
+      Always update.
+    </li>
+
+    <li class="lilist">
+      Do not install a bunch of sketchy "security" software. Keep it minimal.
+    </li>
+
+    <li class="lilist">
+      Never leave your devices unattended.
+    </li>
+
+    <li class="lilist">
+      Always use HTTPS. Manually type in the <code>https://</code> part of the URL when visting a website to prevent <a
+      href="https://security.stackexchange.com/questions/41988/how-does-sslstrip-work">sslstrip attacks</a>. Make sure
+      that the padlock icon is displayed in the address bar. Enable HTTPS-only mode in your browser.
+    </li>
+
+    <li class="lilist">
+      Install <a href="https://en.wikipedia.org/wiki/NoScript">NoScript</a> to block content such as JavaScript as much
+      as you can. JavaScript inherently presents a massive attack surface, as it is arbitrary code executed directly from
+      a website. NoScript also provides protection against attacks such as <a
+      href="https://en.wikipedia.org/wiki/Cross-site_scripting">cross-site scripting</a>, <a
+      href="https://en.wikipedia.org/wiki/Cross-site_request_forgery">cross-site request forgery</a> and more.
+    </li>
+
+    <li class="lilist">
+      Never visit unknown websites.
+    </li>
+
+    <li class="lilist">
+      Disable WiFi and Bluetooth when not in use.
+    </li>
+
+    <li class="lilist">
+      Use airplane mode and/or take out your SIM card as much as possible to prevent cell tower triangulation.
+    </li>
+
+    <li class="lilist">
+      Cover or remove any webcams or microphones.
+    </li>
+
+    <li class="lilist">
+      Do not give apps excessive permissions.
+    </li>
+  </ul>
+
+  <a class="back" href="/index.html">Go back</a>
+
+</body>
+</html>
