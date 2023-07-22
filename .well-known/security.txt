@@ -1,0 +1,14 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Contact: mailto:xbdm@xbdm.fun
+Expires: 2023-06-15T10:59:00.000Z
+Encryption: https://xbdm.fun/pgp.txt
+Acknowledgments: https://xbdm.fun/hall-of-fame.html
+Preferred-Languages: en
+Canonical: https://xbdm.fun/.well-known/security.txt
+Policy: https://xbdm.fun/security-policy.html
+Hiring: https://xbdm.fun/jobs.html
+
+BEGIN KEYBASE SALTPACK SIGNED MESSAGE. kXR7VktZdyH7rvq v5weRa0zkGkBYAE Oq9WdWr14ksVdbq MUTanaL87eRtbIk nlKBaLTSJfzpWZg Kjo4o6h03M7qtjp Yjkj635QFcAUELC 993iubLJ0I4Lfko uFqpbkgJJTYZ43G 6if0zSVksGlVfnx eZfbUEbaZivfA2F qWpz3q8fJKP1SMf kxObzzyLoqr0M7o gQtR8BSH3umQETT RYvGySXu2Jv5dPy Td1vGZJjizki49m JmPAs19V2xIbk5z tlKCcUtlO6e9IjO GblUZIQgPbdHtxU BtJqfBNTRkLpVHR INKZbOFTCsCDYhO DeK70N1Z8lZgiWi FHYcgYg551RpVK7 gSuhTYrKlUODC5s mHYViH5yQ8YocKK xVwwuabZguYCRbj BclOC1UaZLk4M2n b5RR4sLKuJiAO1f G615pzt1WpQBHde injn3guzq6qQ1Um dTPa1EUNzm3gj2T yvGl2OScQQnAXdr TDYzCVFMzcxgKPd JNsh2uCkmH9oUjB 4xEBvrBFuawaPrL rQPALkc8FPECCys ZmPPsUf9xprhzSp Z5BoP0I7BDHOb91 D5GIAJUiybnsjAU mpTCSMAek24WX4P L37C6. END KEYBASE SALTPACK SIGNED MESSAGE.
+-----END PGP SIGNATURE-----
