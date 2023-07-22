@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/xbdm
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://xbdm.fun
+  * I am xbdm (https://keybase.io/xbdm) on keybase.
+  * I have a public key ASBUue9PIYk-AO_FlJEncZ-X9vBKOwtZqg5Ll4iXGXtCwAo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120fb82ceddd6f7217e2c588318ce7fb28fba3460c3298e02d120774ff86efb10010a",
+      "host": "keybase.io",
+      "kid": "012054b9ef4f21893e00efc5949127719f97f6f04a3b0b59aa0e4b978897197b42c00a",
+      "uid": "8fa71aedb209cdcd60c44afdb9531019",
+      "username": "xbdm"
+    },
+    "merkle_root": {
+      "ctime": 1686377417,
+      "hash": "104b5b9ec4f5b64fc4e5faa8ae24a6e7dcca2ddacc483d6ebe39bcb7c43a15a0ae2c2ffef12b2cb3a8216bd120d728518cea0e0238a28dd8922ee78fdb8d2231",
+      "hash_meta": "3bd20dea56c52be9e6ac6693be8b5afa58ae5ef0d7eb8488fa90fce61aede739",
+      "seqno": 24551990
+    },
+    "service": {
+      "entropy": "z7+VfYfgGFR086pCUnKE1R/C",
+      "hostname": "xbdm.fun",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "6.0.1"
+  },
+  "ctime": 1686377609,
+  "expire_in": 504576000,
+  "prev": "73d854a6a9ba19d6111fb4c6c47df0057ea2c25d8b2beea5c75f9a0a782468cb",
+  "seqno": 255,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgVLnvTyGJPgDvxZSRJ3Gfl/bwSjsLWaoOS5eIlxl7QsAKp3BheWxvYWTES5cCzP/EIHPYVKapuhnWER+0xsR98AV+osJdiyvupcdfmgp4JGjLxCCyooL63HSap0pFwKM0ZKGp6g/pgTEyu3UyQSizjf9wZgIBwqNzaWfEQBuzNcJCwrQt26AtlNtFLpglqFTnT6OIpYjTmuSvUMANel0oeYiJkZ6DIZNn3YZhVZvS3q1GrMrVwQePlkxjiw2oc2lnX3R5cGUgpGhhc2iCpHR5cGUIpXZhbHVlxCA6UEheoqVWxv7zNgKE/IHFOlGldqUGgjI+SiupOu6jW6N0YWfNAgKndmVyc2lvbgE=
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/xbdm
+
+==================================================================

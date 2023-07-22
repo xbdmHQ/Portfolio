@@ -1,0 +1,30 @@
+
+
+<html>
+<title>OSINT - Web Search Tool</title>
+
+<body><center><table height='100%' width='50%'><tr><td><div><center>
+<h1><p style="font-family: Fauna One">OSINT - Web Search Tool</p></h1>
+<p style="font-family: Fauna One">Search Full Name or Username: <input type="text" id="username"> <input type="submit" name="submit" value="Search" onclick="start()"><br><br>
+
+</center></div></td></tr></table></center><br></body></html>
+<script>
+function start(){
+var username = escape(document.getElementById('username').value);
+if (username == "") {alert('Type Something, You stupid nigger!'); return false;}
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+if (this.readyState == 4 && this.status == 200) {
+var myObj = JSON.parse(this.responseText);
+document.write("<html><title>OSINT - Web Search Tool</title> <body><center><table height='100%' width='50%'><tr><td><div><center><h1><p style='font-family: Fauna One'>OSINT - Web Search Tool</p></h1>");
+document.write('<br><center><table><tr><td><textarea rows=15 cols=70 style="resize: none;">');
+for (x in myObj.items) {
+document.write(''+ myObj.items[x].link +'\n');
+}
+document.write('</textarea></td></tr></table></center></div></body></html>');
+}
+};
+xmlhttp.open("GET", "https://www.googleapis.com/customsearch/v1?key=AIzaSyBeQ3HIebcEnEzfdMEGzNWEsAytHTKAioo&cx=002586025106775550060:ecd7_kng0zk&q='"+username+"'&alt=json", true);
+xmlhttp.send();
+}
+</script>
