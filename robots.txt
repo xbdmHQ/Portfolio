@@ -5,13 +5,10 @@
 # directory.
 
 User-agent: *
-Disallow: /
+Sitemap: https://offshore.xbdm.fun/sitemap.xml
 
-User-agent: ia_archiver
-Disallow: /
+User-agent: dotbot
+Crawl-delay: 25
 
-User-agent: archive.org_bot
-Disallow: /
-
-User-agent: ia_archiver-web.archive.org
-Disallow: /
+User-agent: MJ12bot
+Crawl-delay: 10
