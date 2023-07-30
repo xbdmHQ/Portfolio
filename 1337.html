@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>root@0x421</title>
+
+  <style>
+  body {
+    font-family: Consolas, monospace;
+    background-color: rgb(2, 2, 2);
+    overflow: hidden;
+  }
+  h1 {
+    font-size: 0.9em;
+    padding: 0;
+    margin: 0;
+    cursor: default;
+  }
+  .terminal {
+    color: rgb(0, 255, 0);
+  }
+  .textedit {
+    display: none;
+    width: 100%;
+    height: 95vh;
+    position: fixed;
+    overflow: hidden;
+    appearance: none;
+    background-color: inherit;
+    color: rgb(0, 255, 0);
+    border: none;
+    outline: none !important;
+    resize: none;
+    cursor: default;
+  }
+  .inputtext {
+    color: rgb(0, 255, 0);
+  }
+  .input {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .inputbox {
+    background-color: inherit;
+    border-style: none;
+    color: rgb(0, 255, 0);
+    outline: 0 !important;
+    padding: 0;
+    margin: 0;
+    font-family: Consolas, monospace;
+    font-size: inherit;
+    font-weight: inherit;
+    font-stretch: inherit;
+    line-height: inherit;
+    display: block;
+    width: 100%;
+    cursor: default;
+  }
+  .inputboxcontainer {
+    width: 100%;
+    flex-grow: 1;
+  }
+  </style>
+
+  <script type="text/javascript">
+  var waitingForEnter = false;
+  var editorReturn = ""
+  var view = "terminal";
+  var date = new Date();
+var config = {
+  version: "V:0.0.1"
+};
+  function loadpage() {
+    console.log("Loading page...");
+    var terminal = document.getElementById("terminal");
+    var inputbox = document.getElementById("inputbox");
+    var inputtext = document.getElementById("inputtext");
+    var textedit= document.getElementById("textedit");
+    document.addEventListener("click", function(event) {
+      selectbox();
+    });
+    selectbox();
+    console.log("All loading processes complete.");
+  };
+  function waitforesc() {
+    return new Promise((resolve) => {
+      document.addEventListener('keydown', onKeyHandler);
+      function onKeyHandler(e) {
+        if (e.key == "Escape") {
+          document.removeEventListener('keydown', onKeyHandler);
+          resolve();
+        }
+      }
+    });
+  }
+   //command functions
+  function clear(cmd) {
+    terminal.innerHTML = "";
+  };
+  //HAHAHAHAHAHAHAHAHAHAHAHAHA
+  function exit(cmd) {
+    document.body.style.backgroundColor = "white";
+    document.body.style.overflow = "visible";
+    terminal.style.display = "none";
+    inputbox.style.display = "none";
+    inputtext.style.display = "none";
+  };
+  function blog(cmd) {
+    window.location.href = "https://0x421.ga/blog";
+  };
+  function github(cmd) {
+    window.location.href = "https://github.com/0x421";
+  };
+function about(cmd) {
+  return "0x421 Development Page " + config.version + "<br>Hi There! My Name Is 0x421, I Am A Self-Tought .NET Programmer Intrested In Cyber Security Student,<br>US Politics, Internet Privacy, Anti-Censorship, Internet Rights, And Waiting For The Day Joe Biden Can Walk Up A Set Of Stairs<br>Without Falling Like An Idiot. I Am Fluent In C# And A Work In Progress Java And C Programmer.<br> I Currently Know C# And Some Basic HTML And Python. Feel Free<br>To Check Out My Programs On GitHub Or Read My Blogs For Intersting Bugs And Updates On Some Of My Projects. <br>Contact My Discord: 0x421#8108 Or My Email At 0x421dev@gmail.com!";
+};
+  function newline(cmd) {
+    console.log("Nothing happened...");
+    return "";
+  };
+  function help(cmd) {
+    var help = ""
+    for (command in commands) {
+      if (command != "") {
+      help += "<br>" + command;
+    };
+    };
+    return help;
+  };
+  function readfile(cmd) {
+    console.log("Searching for " + cmd[0]);
+    if (cmd[0] in fs) {
+      return fs[cmd];
+    }
+    else {
+      return "File not found";
+    };
+  };
+
+function directory(cmd) {
+  files = ""
+  for (file in fs) {
+    files += file + "<br>";
+  };
+  return files;
+  };
+  function echo(cmd) {
+    if (typeof(cmd) == "object") {
+      return cmd.join(" ");
+    }
+    else {
+      return cmd;
+    };
+  };
+  function makefile(cmd) {
+    if (cmd.length > 0) {
+      var hours = (date.getHours()%12);
+      if (hours == 0) {
+        hours = 12;
+      };
+      fs[cmd[0]] = "File created at " + hours + ":" + date.getMinutes() + ":" + date.getSeconds() + " on " + (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getYear();
+    };
+  };
+  var commands = {
+    "clear": clear,
+    "cls": clear,
+    "help": help,
+    "about": about,
+    "": newline,
+    "echo": echo,
+    "exit": exit,
+    "blog": blog,
+    "github": github,
+
+
+  };
+  var fs = {
+    "readme.txt": "Welcome To The 0x421 Development Page!<br>I Am A Self-Tought .NET Programmer Intrested In Cyber Security Student, And Work In Progress Java And C Programmer. I Currently Know C# And Some Basic HTML And Python. Feel Free To Check Out My Programs On GitHub Or Read My Blogs For Intersting Bugs And Updates On Some Of My Projects. Contact Me At 0x421dev@gmail.com!"
+  }
+
+document.addEventListener("keyup", function(event) {
+  if (event.code === "Enter" && view == "terminal") {
+    runcommand();
+    window.location.href = "#inputbox";
+    console.log("Command submitted.");
+  };
+
+});
+
+function runcommand() {
+  console.log("Invoking command...");
+  var command = inputbox.value;
+  if (terminal.innerHTML.endsWith("<br>")) {
+    terminal.innerHTML += inputtext.innerHTML + command;
+  }
+  else if (terminal.innerHTML == "") {
+    terminal.innerHTML += inputtext.innerHTML + command;
+  }
+  else {
+    terminal.innerHTML += "<br>" + inputtext.innerHTML + command;
+  };
+  inputbox.value = "";
+  command = command.split(" ");
+  if (command[0] in commands) {
+    var output = commands[command[0]](command.slice(1));
+    if (typeof(output) == "undefined") {
+      output = "";
+    }
+    else {
+      output = "<br>" + output;
+    };
+    terminal.innerHTML += output;
+    console.log("Command invoked.");
+}
+  else {
+    terminal.innerHTML += "<br>Command not found.";
+    console.log("Command not found.");
+};
+};
+
+  function selectbox() {
+    if (view == "terminal") {
+    inputbox.focus();
+    console.log("Box selected.");
+  };
+  };
+  window.onload = loadpage;
+  </script>
+</head>
+
+<body>
+  <div class="window">
+    <h1 class="terminal" id="terminal">
+
+<pre>   ___       _  _ ___  __ 
+  / _ \     | || |__ \/_ |
+ | | | |_  _| || |_ ) || |
+ | | | \ \/ /__   _/ / | |
+ | |_| |>  <   | |/ /_ | |
+  \___//_/\_\  |_|____||_|<pre>
+                          
+                          
+      <br>Use "help" for a list of commands.</h1>
+    <h1><textarea id="textedit" class="textedit" spellcheck="false"></textarea></h1>
+    <div class="input">
+      <h1 class="inputtext" id="inputtext">root@localhost.domain>>></h1><h1 class="inputboxcontainer"><input type="text" spellcheck="false" class="inputbox" id="inputbox"></input></h1>
+    </div>
+  </div>
+</body>
+
+</html>
